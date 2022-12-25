@@ -1,6 +1,6 @@
 console.log('Hello. I am Yuki!')
 
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require("path");
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -10,6 +10,7 @@ const createWindow = () => {
             preload: path.join(__dirname, 'preload.js'),
         },
     })
+    ipcMain.handle('ping', ()=> 'pong')
     win.loadFile('index.html')
 }
 
