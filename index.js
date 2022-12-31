@@ -10,7 +10,9 @@ const createWindow = () => {
             preload: path.join(__dirname, 'preload.js'),
         },
     })
-    ipcMain.handle('ping', ()=> 'pong')
+    // ipcMain.handle('ping', ()=> 'pong')
+    // const test1 = document.getElementById("test1")
+    // test1.innerText = `Hello`
     win.loadFile('index.html')
 }
 
@@ -28,4 +30,4 @@ app.whenReady().then(() => {
         }
     })
 })
-//aaa
+
